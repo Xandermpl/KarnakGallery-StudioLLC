@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--Project 1-->
+<!--Mobile Interfaces-->
+<!-- Jacob Figueroa-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta keywords= "Sick of Sarah, SOS, rock music, pop, punk rock, girl band, girls" />
+		<meta description="Pre-order your Sick of Sarah Merchandise today! You can save the items now, and pay later." />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device=dpi" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320" />		
+		<title>Sick Of Sarah Merchandise Wish List</title>
+		<link href="css/styles.css" rel="stylesheet" type="text/css" href="css/styles.css" media="only screen and (max-width: 517px)" />
+		<link href='http://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Quicksand|Londrina+Sketch|Monoton|IM+Fell+Double+Pica|Nothing+You+Could+Do' rel='stylesheet' type='text/css' />
+		</head>
+		<body>
+			<div>
+				<hgroup>
+					<h1> Sick of Sarah </h1>
+					<h2> Merchandise Wish List </h2>
+					</hgroup>
+			</div>
+			<div>
+				<div id="content">
+					<div id="container">
+				<div id="main">
+				<nav>
+       				<a href="additem.html" id="addNew" style="display:none;">List New Item</a>
+       			</nav>
+				</div>	
+				<form action="#" method="post" id="wishLists">
+					<fieldset id="wishListsFieldset">
+						<legend>Add To Your Wishlist</legend>
+							<div>
+							<center>
+								<table border="1px" cellpadding="1">
+										<TR><TH><input id="searchBar" type="search" name="search" value="Search by Item" size="200" onFocus="this.value=''"/></TH>
+										<TH><input id="searchButton" type="submit" name="s" value="Search" /> </TH>
+								</table>
+								</center>
+							</div>
+						<span>*Fields are required.</span>
+						<ul id="errors"></ul>
+						<ul id="questions">
+						<body>
+							<li id="select"><label for="item">*Add To Wish List:</label><br /></li>
+						</ul>
+						<br/>
+						<label for="quantity">Number of Items I would like to place on hold: </label><br /><input id="itemQuantity" type="number" min="1" max="5" value="1"/> 
+					</fieldset>
+					</body>
+					<fieldset>
+         				<legend>Your Information</legend>
+         				<span>*Fields are required. </span>
+         				<ul id="errors"></ul> 
+         				<ul id="questions">
+         					<li><label for="firstname">*First Name:</label>
+         					<br/>
+         					<input type="text" id="firstname" /></li>
+         					<li><label for="lastname">*Last Name:</label>
+         					<br/>
+         					<input type="text" id="lastname" /></li>
+         					<li><label for="username">*Username:</label>
+         					<br/>
+         					<input type="text" id="username" /></li>
+         					<li><label for="password">*Password:</label>
+         					<p>(6-10 characters, no spaces)</p>
+         					<br/>
+         					<input type="password" id="password" /></li>
+         					<li><label for="confirmpw">*Confirm Password:</label>
+         					<br/>
+         					<input type="password" id="confirmpw" /></li>
+         					<br/>
+         					<li><label for="Email">*Email:</label><input type="email" id="email" placeholder="example@email.com" /></li>
+         					<br/>
+         					<li><label for="retreivaldate">Date to Purchase Items:</label><input type="date" id="date" name="user_date" /></li>
+         				</ul>
+         			</fieldset>
+					<fieldset>
+         				<legend>Wish List Options</legend>
+         				<ul>
+         					<li>Is this Item for a Friend?
+         						<ul>
+         							<li><input type="radio" value="Yes" id="Yes" name="answer" /><label for="Yes">Yes</label></li>
+         							<li><input type="radio" checked value="No" id="No" name="answer" /><label for="No">No</label></li>
+         						</ul>
+         					<li><label for="comments">Comments:</label><textarea id="comments"></textarea></li>
+         					<li><input type="hidden" value="true" /></li>
+         				</ul>
+         				<input type="submit" formaction="#" id="submitData" value="Submit">
+         			</fieldset> 
+       				<br/> 		
+       				<input type="button" formaction="#" id="clearButton" value="Clear Stored Data" />
+       				<input type="button" formaction="#" id="displayButton" value="Display Data" />
+       			</form>
+       		<div id="wlist">
+       		</div><!-- wlist -->
+    	</div><!-- container -->
+    	<div id="footer"><footer>
+    		</footer> 
+    	</div>
+    	<script src="js/json.js"></script>
+    	<script src="js/main.js"></script>
+	</body>	
+</html>

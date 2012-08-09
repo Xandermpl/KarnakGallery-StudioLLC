@@ -1,0 +1,558 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Sick of Sarah</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+    <!--Home Page -->
+    <div data-role="page" id="home"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Sick of Sarah</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> This is where the Call to Action will be.</p>
+            <!-- Perhaps could have a tab that reads "view our hot featured item" and drop down to: -->
+            <p> Image of 2205 album that links to form to add it </p>
+            <p> Already know what you want? </p>
+            <p><a href="#additem" data-theme="e" data-role="button" data-icon="arrow-r" data-iconpos="right">Add an Item</a></p>
+            
+            <p> Or maybe you want to look around: </p>
+            <ul data-role="listview">
+            	<li>
+            		<a href="#browse" data-role="button" data-icon="grid" data-iconpos="right">Browse
+            		</a>
+            	</li>
+            	<li>
+            		<a href="#albums"><h3>Albums</h3>
+            		</a>
+            	</li>
+            	<li>
+	            	<a href="#prints"><h3>Prints</h3>	
+	            	</a>
+            	</li>
+            	<li>
+            		<a href="#clothing"><h3>Clothing</h3>
+            		</a>
+            	</li>
+            	<li>
+            		<a href="#acc"><h3>Accessories</h3>
+            		</a>
+            	</li>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+			</div><!-- /navbar -->
+        </div> <!-- /footer -->
+	</div> 
+    
+    <!-- Add Item Page -->
+    <div data-role="page" id="additem" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Wish List</h1>
+            <h2>Add an Item</h2>
+        </div> 
+        
+		<div data-role="content">
+        	<p> This will hold the form </p>
+            
+            <div data-role="controlgroup" data-type="horizontal">
+            <!-- #save button needs to submit form data to local storage -->
+            <a href="#save" data-role="button" data-icon="arrow-r" data-iconpos="right">Submit</a>
+            <!-- #display will getData from local storage and display it -->
+            <a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a>
+            </div>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div> 
+        </div>
+	</div> 
+    
+    <!-- Submit page with message that item has been added to Wish List and nav bar links, suggestions -->
+    <div data-role="page" id="save" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Wish List</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Thank you! Your item has been added to your Wish List.</p>
+            <p><a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a></p>
+            <p> Would you like to view more items?</p>
+            <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
+            <p> This app is blah blah blah</p>
+            <p> This app is blah blah blah</p>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    
+        <!-- Display Data page -->
+    <div data-role="page" id="display" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>SOS Wish List</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> The following items are in your Wish List:</p>
+            <p> bam bam bam </p>
+            <div data-role="controlgroup" data-type="horizontal">
+            <!-- #edit button needs to pull item info from local storage -->
+            <a href="#edit" data-role="button" data-icon="gear" data-iconpos="right">Edit Item</a>
+            <!-- #delete will delete the item -->
+            <a href="#delete" data-role="button" data-icon="delete" data-iconpos="right">Delete Item</a>
+            </div>
+            <p> Would you like to view more items?</p>
+            <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
+            <p> Have another item you would like to add?</p>
+            <p><a href="#additem" data-role="button" data-icon="arrow-d" data-iconpos="right">Add Item</a></p>
+            <p> This app is blah blah blah</p>
+            <p> This app is blah blah blah</p>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star" class="ui-btn-active ui-state-persist">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div>
+    
+        
+    <!-- Edit Item Page -->
+    <div data-role="page" id="edit" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Wish List</h1>
+            <h2>Edit Item</h2>
+        </div> 
+        
+		<div data-role="content">
+        	<p> This will hold the form with item's previous stored data. </p>
+            
+            <div data-role="controlgroup" data-type="horizontal">
+            <!-- #update button will replace prior data with edited data -->
+            <a href="#update" data-role="button" data-icon="check" data-iconpos="right">Submit</a>
+            </div>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div> 
+        </div>
+	</div> 
+    
+        <!-- Updated Wish List -->
+    <div data-role="page" id="update" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>Wish List Updated</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> You have successfully saved the changed to your Wish List entry.</p>
+            <p><a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a></p>
+            <p> Would you like to view more items?</p>
+            <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
+            <p> This app is blah blah blah</p>
+            <p> This app is blah blah blah</p>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    
+    
+    <!-- Delete Item Page -->
+    
+    <div data-role="page" id="delete" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>Remove Item?</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Are you sure you want to delete this entry from your Wish List? </p> 
+            <p> This cannot be undone. </p>
+            <div data-role="controlgroup" data-type="horizontal">
+            <!-- #yes button will confirm delete item -->
+            <a href="#yes" data-role="button" data-icon="delete" data-iconpos="right">Yes</a>
+            <!-- #no button will cancel and send user to home page -->
+            <a href="#no" data-role="button" data-icon="back" data-iconpos="right">No</a>
+            </div>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div> 
+        </div>
+	</div>
+    
+    <!-- #yes confirm delete -->
+    <div data-role="page" id="yes" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>Confirmation</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Your item has been removed from your Wish List. </p>
+            <p> View updated Wish List?</p>
+            <p><a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a></p>
+            <p> Would you like to view more items?</p>
+            <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    
+    <!-- #no do not delete -->
+    <div data-role="page" id="no" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>Item Not Deleted</h1>
+        </div> 
+        
+		<div data-role="content">
+            <p> Your item remains safe in your Wish List. </p>
+            <p> Return to Wish List?</p>
+            <p><a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a></p>
+            <p> Would you like to view more items?</p>
+            <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
+
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    
+    <!-- Browse Page -->
+    <div data-role="page" id="browse" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>Browse All</h1>
+        </div> 
+        
+		<div data-role="content">
+			<ul data-role="listview" data-inset="true" data-filter="true">
+				<li data-role="list-divider">Albums</li>
+            	<li>
+            		<a href="#albums">
+            			<img src="img/Album.png" />
+            			<h3>2205</h3>
+            			<p>(2010/2011)</p>
+            		</a>
+            	</li>
+            	<li>
+            		<a href="#albums">
+            			<img src="img/Album2.png" />
+            			<h3>Sick of Sarah</h3>
+            			<p>(2008)</p>
+            		</a>
+            	</li>
+            	<li data-role="list-divider">Prints</li>
+            	<li>
+            		<a href="#prints">
+            			<img src="img/Print.png" />
+            			<h3>Live</h3>
+            			<p>Performance</p>
+            		</a>
+            	</li>	
+            	<li>
+            		<a href="#prints">
+            			<img src="img/Print2.png" />
+            			<h3>Studio</h3>
+            			<p>Print: Studio</p>
+            		</a>
+            	</li>	
+            	<li data-role="list-divider">Clothing</li>
+            	<li>
+            		<a href="#clothing">
+            			<img src="img/Shirt.png" />
+            			<h3>SOS V-Neck T-Shirt</h3>
+            			<p>Available in XS / S / M / L / XL</p>
+            		</a>
+            	</li>	
+            	<li>
+            		<a href="#clothing">
+            			<img src="img/Shirt2.png" />
+            			<h3>SOS Tank Top Muscle Tee</h3>
+            			<p>Available in XS / S / M / L / XL</p>
+            		</a>
+            	</li>
+            	<li data-role="list-divider">Accessories</li>	
+            	<li>
+            		<a href="#acc">
+            			<img src="img/Key.png" />
+            			<h3>SOS Long Key Necklace</h3>
+            			<p>Long Necklace</p>
+            		</a>
+            	</li>	
+            	<li>
+            		<a href="#acc">
+            			<img src="img/Key2.png" />
+            			<h3>SOS Key Necklace Choker</h3>
+            			<p>Choker</p>
+            		</a>
+            	</li>			
+            </ul>
+            <br>
+            <p> Ready to Add an Item to your Wish List? </p>
+            <p><a href="#additem" data-theme="e" data-role="button" data-icon="arrow-r" data-iconpos="right">Add an Item</a></p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    <!-- Albums -->
+	<div data-role="page" id="albums" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Albums</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Make images way bigger for this page, same with other pages</p>
+            <p> except for browse </p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div>     
+    <!-- Prints -->
+    <div data-role="page" id="prints" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Prints</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Large Image of Print with text</p>
+            <p> Large Image of Print2 with text</p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    <!-- Clothing -->
+    <div data-role="page" id="clothing" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Clothing</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Large Image of Shirt with text</p>
+            <p> Large Image of Shirt2 with text</p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div>
+    <!-- Accessories -->
+	<div data-role="page" id="acc" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed">
+        	<h1>SOS Accessories</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> Image of Key </p>
+			<p> Image of Key2 </p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div>
+    
+    <!-- About Page -->
+    <div data-role="page" id="about" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>About Sick of Sarah</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> This will contain some kind of information about the band.</p>
+            <p> I haven't decided yet what to include. Meh. </p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info" class="ui-btn-active ui-state-persist">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+    
+    <!-- RSS -->
+    
+    <div data-role="page" id="rss" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Newsfeed</h1>
+        </div> 
+        
+		<div data-role="content">
+        	<p> This page will have either the RSS of their Tumblr</p>
+            <p> Or the RSS of their Twitter. </p>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward" class="ui-btn-active ui-state-persist">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+        
+</body>
+</html>
