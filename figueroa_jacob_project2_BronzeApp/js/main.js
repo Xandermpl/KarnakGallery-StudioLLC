@@ -1,5 +1,5 @@
-// Project 4: Web App Part 4
-// Visual Frameworks VFW 1207
+// Project 2: Bronze App
+// Mobile Interfaces & Usability 1208
 // Jacob Figueroa
 
 //Wait until the DOM is ready.

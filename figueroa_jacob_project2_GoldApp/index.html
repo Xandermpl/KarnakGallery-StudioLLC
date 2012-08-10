@@ -1,3 +1,5 @@
+<!-- MIU 1208 Project 2: Gold App -->
+<!-- Jacob Figueroa -->
 <!doctype html>  
 <html lang="en">
 <head>
@@ -16,11 +18,31 @@
 	
 	<!-- StyleSheets under here -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+    <link rel="stylesheet" href="glisse.css" />
 	<link rel="stylesheet" href="css/style.css" />
+	<style>
+		.ui-grid-b img {
+			width  : 100%;
+			height : auto; 
+		}
+		.ui-pagination-prev img {
+			width  : 100%;
+			height : auto; 
+		}
+		.ui-pagination-next img {
+			width  : 100%;
+			height : auto; 
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	</style>
+	
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
-
+	
 </head>
 <body>
 	
@@ -28,13 +50,11 @@
     <div data-role="page" id="home"> 
     
 		<div data-role="header" data-position="fixed" data-theme="b">
-        	<h1>Sick of Sarah</h1>
+        	<h1></h1>
         </div> 
         
 		<div data-role="content">
-        	<p> This is where the Call to Action will be.</p>
-            <!-- Perhaps could have a tab that reads "view our hot featured item" and drop down to: -->
-            <p> Image of 2205 album that links to form to add it </p>
+        	<img src="img/soscta.jpg" />
             <p> Already know what you want? </p>
             <p><a href="#additem" data-theme="e" data-role="button" data-icon="arrow-r" data-iconpos="right">Add an Item</a></p>
             
@@ -44,6 +64,7 @@
             		<a href="#browse" data-role="button" data-icon="grid" data-iconpos="right">Browse
             		</a>
             	</li>
+            <!-- these were from before I added the accordian list inlay pattern on #browse 
             	<li>
             		<a href="#albums"><h3>Albums</h3>
             		</a>
@@ -60,6 +81,8 @@
             		<a href="#acc"><h3>Accessories</h3>
             		</a>
             	</li>
+            	-->
+            </ul>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -77,14 +100,49 @@
     <!-- Add Item Page -->
     <div data-role="page" id="additem" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Wish List</h1>
             <h2>Add an Item</h2>
         </div> 
         
-		<div data-role="content">
-        	<p> This will hold the form </p>
-            
+		<div data-role="content"> 
+			<div data-role="fieldcontain">
+				<legend>Your Information</legend>
+				<br>
+				<span>*Fields are required. </span>
+				<br>
+					<div>
+						<label for="name">*First Name:</label>
+						<input type="text" name="name" id="firstname" value=""  />
+						<label for="name">*Last Name:</label>
+						<input type="text" name="name" id="lastname" value=""  />
+						<label for="name">*Username:</label>
+						<input type="text" name="name" id="username" value=""  />
+						<label for="name">*Password:</label>
+						<input type="text" name="name" id="password" value=""  />
+						<label for="name">*Confirm Password:</label>
+						<input type="text" name="name" id="confirmpw" value=""  />
+						<label for="name">*Email:</label>
+						<input type="text" name="name" id="email" value=""  />
+						<label for="name">Date to Purchase Items:</label>
+						<input type="text" name="name" id="date" value=""  />
+					<legend>Wish List Options</legend>
+					</div>	
+					<fieldset data-role="controlgroup">
+					<legend>Is this item for a Friend?</legend>
+						<input type="radio" name="answer" id="Yes" value="yes" />
+						<label for="radio-choice-1">Yes</label>
+						<input type="radio" name="answer" id="No" value="no"  checked="checked"/>
+						<label for="radio-choice-1">No</label> 
+						<div>
+							<label for="textarea-a">Textarea:</label>
+							<textarea name="textarea" id="comments"></textarea>
+						</div>
+					</fieldset>
+			</div>
+		
+		
+		
             <div data-role="controlgroup" data-type="horizontal">
             <!-- #save button needs to submit form data to local storage -->
             <a href="#save" data-role="button" data-icon="arrow-r" data-iconpos="right">Submit</a>
@@ -109,7 +167,7 @@
     <!-- Submit page with message that item has been added to Wish List and nav bar links, suggestions -->
     <div data-role="page" id="save" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Wish List</h1>
         </div> 
         
@@ -118,8 +176,6 @@
             <p><a href="#display" data-role="button" data-icon="arrow-r" data-iconpos="right">View Wish List</a></p>
             <p> Would you like to view more items?</p>
             <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
-            <p> This app is blah blah blah</p>
-            <p> This app is blah blah blah</p>
 
         </div> 
         
@@ -144,7 +200,6 @@
         
 		<div data-role="content">
         	<p> The following items are in your Wish List:</p>
-            <p> bam bam bam </p>
             <div data-role="controlgroup" data-type="horizontal">
             <!-- #edit button needs to pull item info from local storage -->
             <a href="#edit" data-role="button" data-icon="gear" data-iconpos="right">Edit Item</a>
@@ -155,8 +210,6 @@
             <p><a href="#browse" data-role="button" data-icon="arrow-d" data-iconpos="right">Browse</a></p>
             <p> Have another item you would like to add?</p>
             <p><a href="#additem" data-role="button" data-icon="arrow-d" data-iconpos="right">Add Item</a></p>
-            <p> This app is blah blah blah</p>
-            <p> This app is blah blah blah</p>
 
         </div> 
         
@@ -176,7 +229,7 @@
     <!-- Edit Item Page -->
     <div data-role="page" id="edit" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Wish List</h1>
             <h2>Edit Item</h2>
         </div> 
@@ -206,7 +259,7 @@
         <!-- Updated Wish List -->
     <div data-role="page" id="update" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Wish List Updated</h1>
         </div> 
         
@@ -237,7 +290,7 @@
     
     <div data-role="page" id="delete" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Remove Item?</h1>
         </div> 
         
@@ -268,7 +321,7 @@
     <!-- #yes confirm delete -->
     <div data-role="page" id="yes" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Confirmation</h1>
         </div> 
         
@@ -296,7 +349,7 @@
     <!-- #no do not delete -->
     <div data-role="page" id="no" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Item Not Deleted</h1>
         </div> 
         
@@ -324,78 +377,102 @@
     <!-- Browse Page -->
     <div data-role="page" id="browse" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Browse All</h1>
         </div> 
         
-		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-filter="true">
-				<li data-role="list-divider">Albums</li>
-            	<li>
-            		<a href="#albums">
-            			<img src="img/Album.png" />
-            			<h3>2205</h3>
-            			<p>(2010/2011)</p>
-            		</a>
-            	</li>
-            	<li>
-            		<a href="#albums">
-            			<img src="img/Album2.png" />
-            			<h3>Sick of Sarah</h3>
-            			<p>(2008)</p>
-            		</a>
-            	</li>
-            	<li data-role="list-divider">Prints</li>
-            	<li>
-            		<a href="#prints">
-            			<img src="img/Print.png" />
-            			<h3>Live</h3>
-            			<p>Performance</p>
-            		</a>
-            	</li>	
-            	<li>
-            		<a href="#prints">
-            			<img src="img/Print2.png" />
-            			<h3>Studio</h3>
-            			<p>Print: Studio</p>
-            		</a>
-            	</li>	
-            	<li data-role="list-divider">Clothing</li>
-            	<li>
-            		<a href="#clothing">
-            			<img src="img/Shirt.png" />
-            			<h3>SOS V-Neck T-Shirt</h3>
-            			<p>Available in XS / S / M / L / XL</p>
-            		</a>
-            	</li>	
-            	<li>
-            		<a href="#clothing">
-            			<img src="img/Shirt2.png" />
-            			<h3>SOS Tank Top Muscle Tee</h3>
-            			<p>Available in XS / S / M / L / XL</p>
-            		</a>
-            	</li>
-            	<li data-role="list-divider">Accessories</li>	
-            	<li>
-            		<a href="#acc">
-            			<img src="img/Key.png" />
-            			<h3>SOS Long Key Necklace</h3>
-            			<p>Long Necklace</p>
-            		</a>
-            	</li>	
-            	<li>
-            		<a href="#acc">
-            			<img src="img/Key2.png" />
-            			<h3>SOS Key Necklace Choker</h3>
-            			<p>Choker</p>
-            		</a>
-            	</li>			
-            </ul>
-            <br>
+		<div data-role="content">	
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Albums</h3>
+				<ul data-role="listview" data-inset="true" data-filter="true">
+					<li data-role="list-divider">
+					<li>
+            			<a href="#albums">
+            				<img src="img/2205.jpg" />
+            				<h3>2205</h3>
+            				<p>(2010/2011)</p>
+            			</a>
+            		</li>
+            		<li data-role="list-divider">
+            		<li>
+            			<a href="#albums">
+            				<img src="img/sosalbum.jpg" />
+            				<h3>Sick of Sarah</h3>
+            				<p>(2008)</p>
+            			</a>
+            		</li>
+				</ul>
+	
+			</div>
+	
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Prints</h3>
+					<ul data-role="listview" data-inset="true" data-filter="true">
+						<li data-role="list-divider">
+						<li>
+							<a href="#prints">
+								<img src="img/printlive.jpg" />
+								<h3>Live</h3>
+								<p>Performance</p>
+							</a>
+						</li>	
+						<li data-role="list-divider">
+						<li>
+							<a href="#prints">
+								<img src="img/studioprint.jpg" />
+								<h3>Studio</h3>
+								<p>Print: Studio</p>
+							</a>
+						</li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Clothing</h3>
+					<ul data-role="listview" data-inset="true" data-filter="true">
+						<li data-role="list-divider">
+						<li>
+							<a href="#clothing">
+								<img src="img/sosshirt.jpg" />
+								<h3>SOS V-Neck T-Shirt</h3>
+								<p>Available in XS / S / M / L / XL</p>
+							</a>
+						</li>
+						<li data-role="list-divider">	
+						<li>
+							<a href="#clothing">
+								<img src="img/Shirt2.jpg" />
+								<h3>SOS Tank Top Muscle Tee</h3>
+								<p>Available in XS / S / M / L / XL</p>
+							</a>
+						</li>
+					</ul>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+				<h3>Accessories</h3>
+					<ul data-role="listview" data-inset="true" data-filter="true">
+						<li data-role="list-divider">
+						<li>
+							<a href="#acc">
+								<img src="img/keys.jpg" />
+								<h3>SOS Long Key Necklace</h3>
+								<p>Long Necklace</p>
+							</a>
+						</li>
+						<li data-role="list-divider">	
+						<li>
+							<a href="#acc">
+								<img src="img/keys2.jpg" />
+								<h3>SOS Key Necklace Choker</h3>
+								<p>Choker</p>
+							</a>
+						</li>			
+					</ul>
+			</div>
+		</div>
+		<div>
             <p> Ready to Add an Item to your Wish List? </p>
             <p><a href="#additem" data-theme="e" data-role="button" data-icon="arrow-r" data-iconpos="right">Add an Item</a></p>
         </div> 
-        
 		<div data-role="footer" data-position="fixed" data-id="home">
         	<div data-role="navbar">
 				<ul>
@@ -405,18 +482,21 @@
                     <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
 				</ul>
         	</div>
-        </div> 
-	</div> 
+        </div> 	
+    </div> 
+	
     <!-- Albums -->
 	<div data-role="page" id="albums" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Albums</h1>
         </div> 
         
 		<div data-role="content">
-        	<p> Make images way bigger for this page, same with other pages</p>
-            <p> except for browse </p>
+			<img src="img/2205.jpg" />
+				<h3>2010/2011</h3>
+			<img src="img/sosalbum.jpg" />
+				<h3>2008</h3>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -429,17 +509,20 @@
 				</ul>
         	</div>
         </div> 
-	</div>     
+	</div>    
+	 
     <!-- Prints -->
     <div data-role="page" id="prints" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Prints</h1>
         </div> 
         
 		<div data-role="content">
-        	<p> Large Image of Print with text</p>
-            <p> Large Image of Print2 with text</p>
+        	<img src="img/printlive.jpg" />
+				<h3>10x15 and 27x39 inch prints and posters!</h3>
+			<img src="img/studioprint.jpg" />
+				<h3>10x15 and 27x39 inch prints and posters!</h3>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -453,16 +536,19 @@
         	</div>
         </div> 
 	</div> 
+	
     <!-- Clothing -->
     <div data-role="page" id="clothing" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Clothing</h1>
         </div> 
         
 		<div data-role="content">
-        	<p> Large Image of Shirt with text</p>
-            <p> Large Image of Shirt2 with text</p>
+        	<img src="img/sosshirt.jpg" />
+				<h3>Available in XS / S / M / L / XL</h3>
+			<img src="img/shirt2.jpg" />
+				<h3>Available in XS / S / M / L / XL</h3>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -476,16 +562,19 @@
         	</div>
         </div> 
 	</div>
+	
     <!-- Accessories -->
 	<div data-role="page" id="acc" data-add-back-btn="true"> 
     
-		<div data-role="header" data-position="fixed">
+		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>SOS Accessories</h1>
         </div> 
         
 		<div data-role="content">
-        	<p> Image of Key </p>
-			<p> Image of Key2 </p>
+        	<img src="img/keys.jpg" />
+				<h3>You can wear your love for SOS around your neck!</h3>
+			<img src="img/keys2.jpg" />
+				<h3>Available long and choker-style.</h3>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -508,8 +597,56 @@
         </div> 
         
 		<div data-role="content">
-        	<p> This will contain some kind of information about the band.</p>
-            <p> I haven't decided yet what to include. Meh. </p>
+        	<ul data-role="listview">
+            	<li>
+            		<a href="https://github.com/Xandermpl/KarnakGallery-StudioLLC/tree/master/figueroa_jacob_project2_GoldApp" data-role="button" data-icon="star" data-iconpos="right">
+            			<h3>Gold App</h3>
+            				<p> © Karnak Gallery & Studio LLC </p>
+            		</a>
+            	</li>
+            	<li>
+            		<a href="https://github.com/Xandermpl/KarnakGallery-StudioLLC/tree/master/figueroa_jacob_project2_BronzeApp" data-role="button" data-icon="star" data-iconpos="right">
+            			<h3>Bronze App</h3>
+            				<p> © Karnak Gallery & Studio LLC </p>
+            		</a>
+            	</li>            
+            </ul>
+            <p>
+            <br>
+            The full features of this application will be implemented soon. Karnak Gallery and Studio LLC are working on to showcase the expertise of their craft. The future features of this application depend in part on the band of Sick of Sarah and also the availability of Karnak Gallery and Studio LLC.
+            <br>
+            </p>
+            <p>
+            
+            </p>
+            <p>
+            To view our other work in the meanwhile and to stay updated on our future projects please visit:
+            <br>
+            </p>
+            <br>
+            <ul data-role="listview">
+            	<li>
+	            	<a href="http://www.zanderthezillionaire.biz" data-role="button" data-icon="gear" data-iconpos="right">
+	            		<h2>Karnak Gallery & Studio LLC</h2>
+	            			<p>Official Website</p>
+	            	</a>
+            	</li>
+            </ul>
+            <ul data-role="listview">
+            	<li>
+	            	<a href="http://www.sickofsarah.com" data-role="button" data-icon="gear" data-iconpos="right">
+	            		<h2>Sick Of Sarah</h2>
+	            			<p>Official Website</p>
+	            	</a>
+            	</li>
+            </ul>
+            <br>
+            <p>Sick of Sarah have performed at venues around the United States and toured Europe just this past year.
+	        </p>
+            <p>They play at the Vans Warped Tour and have been featured in SPIN Magazine and received much press and even shared the stage with rock legend Joan Jett.
+            </p> 
+			<p> Special Thanks to the beautiful, talented Members of Sick of Sarah: Abisha Uhl, Jamie Holm, Katie Murphy, Jessie Farmer, and Jessica Forsythe.
+			</p>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -530,11 +667,121 @@
     
 		<div data-role="header" data-position="fixed" data-theme="b">
         	<h1>Newsfeed</h1>
+        	<img src="img/live.jpg" />
+        </div> 
+		<div data-role="content">
+        	<p> Would You Like to Join Our Mailing List?</p>
+        	<br>
+        	<ul data-role="listview">
+            	<li>
+	            	<a href="http://sickofsarah.com/mailinglist" data-role="button" data-icon="star" data-iconpos="right">
+	            		<h2>Sick of Sarah</h2>
+	            			<p>Mailing List</p>
+	            	</a>
+            	</li>
+            </ul>
+            <br>
+            <p> The Sick of Sarah Movie, a feature length documentary, is in production by Director Mr. J Reuben Appelman.</p>
+            <img src="img/mirror.jpg" />
+            <p> Thanks to all of the supporters out there who helped fund the Kickstarter for the production of this film!</p>
+            <br>
+            <ul data-role="listview">
+            	<li>
+	            	<a href="http://sickofsarahmovie.tumblr.com/post/24943558126/j-reuben-appelmans-new-documentary-project" data-role="button" data-icon="star" data-iconpos="right">
+	            		<h2>The Sick of Sarah Movie</h2>
+	            			<p>You're What I Want Wrong With Me</p>
+	            	</a>
+            	</li>
+            </ul>
+            <br>
+            <p>Sick of Sarah played Warped Tour 2011, and this year as well. </p>
+            <br>
+            <ul data-role="listview">
+            	<li>
+            		<a href="#photos" data-role="button" data-icon="star" data-iconpos="right">
+            			<h3>Sick of Sarah</h3>
+            				<h4>Live at Warped Tour!</h3>
+            					<p> Want to see the photo gallery? </p>
+            		</a>
+            	</li>
+            </ul>
+            <img src="img/thankyou.jpg" />
+            <br>
+        	<p> It was a fun run for this year's LadyKiller tour!</p>
+        	<img src="img/lkillertour.jpg" />
+        	<p> We played at Lush for Pride in our hometown of Minneapolis, along with bands Hunter Valentine and Vanity Theft. </p>
+        	<img src="img/ladykiller.jpg" />
+        	<p> Sick of Sarah's lead singer, Abisha Uhl, starred in a Short Film, called "The Plan", which has been featured at many film festivals this year.</p>
+        	<img src="img/theplan.jpg" />
+        </div>
+		<div data-role="footer" data-position="fixed" data-id="home">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward" class="ui-btn-active ui-state-persist">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+	
+	<!-- photos gallery in thumbnails -->
+	<div data-role="page" id="photos" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Sick of Sarah</h1>
+        	<h2>Warped Tour</h2>
         </div> 
         
 		<div data-role="content">
-        	<p> This page will have either the RSS of their Tumblr</p>
-            <p> Or the RSS of their Twitter. </p>
+			<p> Click to page through album. </p>
+			<ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#warpedgif">View End of Album
+						<img src="img/warped.jpg" />
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#warped">Next
+					</a>			
+				</li>
+			</ul>
+			
+		</div>
+ 
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+	
+	 <!-- #warped -->
+    <div data-role="page" id="warped" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Sick of Sarah</h1>
+        	<h2>Warped Tour</h2>
+        </div> 
+        
+		<div data-role="content">
+            <ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#photos">Prev
+						<img src="img/warped2.jpg" />
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#warped2">Next
+					</a>						
+				</li>
+			</ul>
         </div> 
         
 		<div data-role="footer" data-position="fixed" data-id="home">
@@ -543,7 +790,156 @@
 					<li><a href="#home" data-icon="home">Home</a></li>
 					<li><a href="#about" data-icon="info">About</a></li>
                     <li><a href="#display" data-icon="star">Wish List</a></li>
-                    <li><a href="#rss" data-icon="forward" class="ui-btn-active ui-state-persist">Newsfeed</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+	
+	<!-- #warped2 -->
+    <div data-role="page" id="warped2" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Sick of Sarah</h1>
+        	<h2>Warped Tour</h2>
+        </div> 
+        
+		<div data-role="content">
+            <ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#warped">Prev
+						<img src="img/warped3.jpg" />
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#warped3">Next
+					</a>
+				</li>
+			</ul>
+        </div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+	
+	<!-- #warped3 -->    
+	<div data-role="page" id="warped3" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Confirmation</h1>
+        </div> 
+        
+		<div data-role="content">
+			<ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#warped2">Prev
+						<img src="img/warped5.jpg" />
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#warped5">Next
+					</a>
+				</li>
+			</ul>
+		
+		</div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+	
+	<!-- #warped5 -->   
+	<div data-role="page" id="warped5" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Confirmation</h1>
+        </div> 
+        
+		<div data-role="content">
+			<ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#warped3">Prev
+						<img src="img/Warped6.jpg" />
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#warpedgif">Next
+					</a>
+				</li>
+			</ul>
+		
+		</div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
+				</ul>
+        	</div>
+        </div> 
+	</div> 
+
+	<!-- #warpedgif -->
+	<div data-role="page" id="warpedgif" data-add-back-btn="true"> 
+    
+		<div data-role="header" data-position="fixed" data-theme="b">
+        	<h1>Confirmation</h1>
+        </div> 
+        
+		<div data-role="content">
+			<ul data-role="pagination">
+				<li class="ui-pagination-prev">
+					<a href="#warped5">Prev
+					</a>
+				</li>
+				<li class="ui-pagination-next">
+					<a href="#photos">Start Over
+					</a>
+				</li>
+			</ul>
+			<div class="ui-grid-b" >
+				<div class="ui-block-a">
+					<a href="#warpedgif"> 
+            			<img src="img/warpedgif.gif" />
+            			<img src="img/warpedgif2.gif" />
+					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#warpedgif">
+            			<img src="img/warpedgif3.gif" />
+            			<img src="img/warpedgif4.gif" />
+					</a>
+				</div>
+			</div>
+		
+		</div> 
+        
+		<div data-role="footer" data-position="fixed" data-id="home">
+        	<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+					<li><a href="#about" data-icon="info">About</a></li>
+                    <li><a href="#display" data-icon="star">Wish List</a></li>
+                    <li><a href="#rss" data-icon="forward">Newsfeed</a></li>
 				</ul>
         	</div>
         </div> 

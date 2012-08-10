@@ -1,5 +1,4 @@
-// Project 2
-// Mobile Interfaces 1208
+// Project 2 MIU 1208
 // Jacob Figueroa
 
 var json = {

@@ -1,4 +1,6 @@
-// Copied from Week 1 Project's JS because it should not be broken in any way!
+// Project 2 MIU 1208
+// Jacob Figueroa
+//Copied from Week 1 Project's JS because it should not be broken in any way!
 // write your javascript in here
 
 //Wait until the DOM is ready.
