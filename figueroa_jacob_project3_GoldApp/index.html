@@ -128,7 +128,7 @@
 				</div>
 				<div data-role="fieldcontain">
 					<label for="password">*Password:</label>
-					<input type="password" name="password" id="password" value="" class="required" placeholder="6-12 characters"
+					<input type="password" name="password" id="password" value="" class="required min(6) max(12)" placeholder="6-12 characters"
 					onfocus="this.placeholder = ''" onblur="this.placeholder = '6-12 characters'"/>
 				</div>
 				<div data-role="fieldcontain">
@@ -250,6 +250,8 @@
             <a href="#edit" data-role="button" data-icon="gear" data-iconpos="right">Edit Item</a>
             <!-- #delete will delete the item -->
             <a href="#delete" data-role="button" data-icon="delete" data-iconpos="right">Delete Item</a>
+            </div>
+            <div data-role="button" id="clearData" data-inline="true">Clear Levels
             </div>
             <p> Would you like to view more items?</p>
             <ul data-role="listview">
