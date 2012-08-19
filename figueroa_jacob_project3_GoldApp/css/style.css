@@ -1,0 +1,25 @@
+// write your CSS in here
+
+.ui-grid-b img {
+	width  : 100%;
+	height : auto; 
+}
+.ui-pagination-prev img {
+	width  : 100%;
+	height : auto; 
+}
+.ui-pagination-next img {
+	width  : 100%;
+	height : auto; 
+}
+img {
+	width: 100%;
+	height: auto;
+}
+label.error {
+	display: block;
+	margin: 10px, 0;
+	color: #cc0000;
+} 
+
+#aierrorslink{display:none;}
