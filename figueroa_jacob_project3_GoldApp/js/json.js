@@ -3,7 +3,7 @@
 
 var json = {
 	"entry 1": {
-		"group": ["Wish List Item: ", "Album: 2205 (2010/2011)"],
+		"entries": ["Wish List Item: ", "Album: 2205 (2010/2011)"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "Jacob"],
 		"lastname": ["Last Name: ", "Figueroa"],
@@ -11,12 +11,12 @@ var json = {
 		"password": ["Password: ", "Zander11"],
 		"confirmpw": ["Password Confirmed: ", "Zander11"],
 		"email": ["Email: ", "zandermpls@fullsail.edu"],
-		"date": ["Date: ", "08/21/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "I think Norell will like this album."]
+		"mydate": ["Date: ", "08/21/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "I think Norell will like this album."]
 	},
 	"entry 2": {
-		"group": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
+		"entries": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
 		"quantity": ["Number of Items I would like: ", "3"],
 		"firstname": ["First Name: ", "Mary"],
 		"lastname": ["Last Name: ", "Norell"],
@@ -24,12 +24,12 @@ var json = {
 		"password": ["Password: ", "Norell22"],
 		"confirmpw": ["Password Confirmed: ", "Norell22"],
 		"email": ["Email: ", "norell@her.com"],
-		"date": ["Date: ", "09/25/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "This is for my friend Angelica!"]
+		"mydate": ["Date: ", "09/25/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "This is for my friend Angelica!"]
 	},
 	"entry 3": {
-		"group": ["Wish List Item: ", "Autographed Print: SOS Live"],
+		"entries": ["Wish List Item: ", "Autographed Print: SOS Live"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Johnny"],
 		"lastname": ["Last Name: ", "Jiron"],
@@ -37,12 +37,12 @@ var json = {
 		"password": ["Password: ", "Taco86"],
 		"confirmpw": ["Password Confirmed: ", "Taco86"],
 		"email": ["Email: ", "tponch@me.com"],
-		"date": ["Date: ", "07/31/12"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "Priscilla will like this."]
+		"mydate": ["Date: ", "07/31/12"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "Priscilla will like this."]
 	},
 	"entry 4": {
-		"group": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
+		"entries": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "Caleb"],
 		"lastname": ["Last Name: ", "Figueroa"],
@@ -50,12 +50,12 @@ var json = {
 		"password": ["Password: ", "Lovemus1c"],
 		"confirmpw": ["Password Confirmed: ", "Lovemus1c"],
 		"email": ["Email: ", "rockstar@him.biz"],
-		"date": ["Date: ", "08/25/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "Girlfriend loves this band."]
+		"mydate": ["Date: ", "08/25/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "Girlfriend loves this band."]
 	},
 	"entry 5": {
-		"group": ["Wish List Item: ", "Sick of Sarah V-Neck T-Shirt"],
+		"entries": ["Wish List Item: ", "Sick of Sarah V-Neck T-Shirt"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Priscilla"],
 		"lastname": ["Last Name: ", "Rodriguez"],
@@ -63,12 +63,12 @@ var json = {
 		"password": ["Password: ", "Work1n"],
 		"confirmpw": ["Password Confirmed: ", "Work1n"],
 		"email": ["Email: ", "brokeandpretty@me.com"],
-		"date": ["Date: ", "09/01/12"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Can't wait to wear this!"]
+		"mydate": ["Date: ", "09/01/12"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Can't wait to wear this!"]
 	},
 	"entry 6": {
-		"group": ["Wish List Item: ", "Tank Top Muscle Tee"],
+		"entries": ["Wish List Item: ", "Tank Top Muscle Tee"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "Angelica"],
 		"lastname": ["Last Name: ", "Ramirez"],
@@ -76,12 +76,12 @@ var json = {
 		"password": ["Password: ", "Equality1"],
 		"confirmpw": ["Password Confirmed: ", "Equality1"],
 		"email": ["Email: ", "aramirez@her.com"],
-		"date": ["Date: ", "08/15/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "This will look cute on Norell"]
+		"mydate": ["Date: ", "08/15/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "This will look cute on Norell"]
 	},
 	"entry 7": {
-		"group": ["Wish List Item: ", "Long Key Necklace"],
+		"entries": ["Wish List Item: ", "Long Key Necklace"],
 		"quantity": ["Number of Items I would like: ", "5"],
 		"firstname": ["First Name: ", "Lo"],
 		"lastname": ["Last Name: ", "Beth"],
@@ -89,12 +89,12 @@ var json = {
 		"password": ["Password: ", "Bones26"],
 		"confirmpw": ["Password Confirmed: ", "Bones26"],
 		"email": ["Email: ", "likekeys@me.com"],
-		"date": ["Date: ", "07/29/12"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Going to mod these for some body chains."]
+		"mydate": ["Date: ", "07/29/12"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Going to mod these for some body chains."]
 	},
 	"entry 8": {
-		"group": ["Wish List Item: ", "Key Necklace Choker"],
+		"entries": ["Wish List Item: ", "Key Necklace Choker"],
 		"quantity": ["Number of Items I would like: ", "4"],
 		"firstname": ["First Name: ", "Emily"],
 		"lastname": ["Last Name: ", "Pufall"],
@@ -102,12 +102,12 @@ var json = {
 		"password": ["Password: ", "Lovew1ns"],
 		"confirmpw": ["Password Confirmed: ", "Lovew1ns"],
 		"email": ["Email: ", "heart@her.com"],
-		"date": ["Date: ", "09/10/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "I will wear this to the show!"]
+		"mydate": ["Date: ", "09/10/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "I will wear this to the show!"]
 	},
 	"entry 9": {
-		"group": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
+		"entries": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Andra"],
 		"lastname": ["Last Name: ", "Larae"],
@@ -115,12 +115,12 @@ var json = {
 		"password": ["Password: ", "Lovesc1ence"],
 		"confirmpw": ["Password Confirmed: ", "Lovesc1ence"],
 		"email": ["Email: ", "rock@theearth.com"],
-		"date": ["Date: ", "09/30/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "My cousin loves this band!"]
+		"mydate": ["Date: ", "09/30/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "My cousin loves this band!"]
 	},
 	"entry 10": {
-		"group": ["Wish List Item: ", "Sick of Sarah V-Neck T-Shirt"],
+		"entries": ["Wish List Item: ", "Sick of Sarah V-Neck T-Shirt"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Grant"],
 		"lastname": ["Last Name: ", "Mayland"],
@@ -128,12 +128,12 @@ var json = {
 		"password": ["Password: ", "DJN1ght"],
 		"confirmpw": ["Password Confirmed: ", "DJN1ght"],
 		"email": ["Email: ", "nightstalker@dj.com"],
-		"date": ["Date: ", "09/15/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "This will look cute on my girlfriend!"]
+		"mydate": ["Date: ", "09/15/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "This will look cute on my girlfriend!"]
 	},
 	"entry 11": {
-		"group": ["Wish List Item: ", "Key Necklace Choker"],
+		"entries": ["Wish List Item: ", "Key Necklace Choker"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "Gisselle"],
 		"lastname": ["Last Name: ", "Vallejos"],
@@ -141,12 +141,12 @@ var json = {
 		"password": ["Password: ", "C1tarre"],
 		"confirmpw": ["Password Confirmed: ", "C1tarre"],
 		"email": ["Email: ", "beachgirl@me.com"],
-		"date": ["Date: ", "09/19/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "One is for me, one is for my sister."]
+		"mydate": ["Date: ", "09/19/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "One is for me, one is for my sister."]
 	},
 	"entry 12": {
-		"group": ["Wish List Item: ", "Tank Top Muscle Tee"],
+		"entries": ["Wish List Item: ", "Tank Top Muscle Tee"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Wendy"],
 		"lastname": ["Last Name: ", "Thorpe"],
@@ -154,12 +154,12 @@ var json = {
 		"password": ["Password: ", "HealEarth1"],
 		"confirmpw": ["Password Confirmed: ", "HealEarth1"],
 		"email": ["Email: ", "clearing@earth.com"],
-		"date": ["Date: ", "10/01/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Thought I would get a new shirt to lounge around in."]
+		"mydate": ["Date: ", "10/01/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Thought I would get a new shirt to lounge around in."]
 	},
 	"entry 13": {
-		"group": ["Wish List Item: ", "Long Key Necklace"],
+		"entries": ["Wish List Item: ", "Long Key Necklace"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Elliott"],
 		"lastname": ["Last Name: ", "Roche"],
@@ -167,12 +167,12 @@ var json = {
 		"password": ["Password: ", "mus1c1aN"],
 		"confirmpw": ["Password Confirmed: ", "mus1c1aN"],
 		"email": ["Email: ", "justplay@guitar.com"],
-		"date": ["Date: ", "09/11/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "I think my girlfriend will love this."]
+		"mydate": ["Date: ", "09/11/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "I think my girlfriend will love this."]
 	},
 	"entry 14": {
-		"group": ["Wish List Item: ", "Autographed Print: SOS Live"],
+		"entries": ["Wish List Item: ", "Autographed Print: SOS Live"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Adrian"],
 		"lastname": ["Last Name: ", "Kerstin"],
@@ -180,12 +180,12 @@ var json = {
 		"password": ["Password: ", "forEvery1"],
 		"confirmpw": ["Password Confirmed: ", "forEvery1"],
 		"email": ["Email: ", "cleanwater@bio.com"],
-		"date": ["Date: ", "09/17/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "These girls are cute AND they rock!"]
+		"mydate": ["Date: ", "09/17/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "These girls are cute AND they rock!"]
 	},
 	"entry 15": {
-		"group": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
+		"entries": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "John"],
 		"lastname": ["Last Name: ", "Smith"],
@@ -193,12 +193,12 @@ var json = {
 		"password": ["Password: ", "rockMus1c"],
 		"confirmpw": ["Password Confirmed: ", "rockMus1c"],
 		"email": ["Email: ", "lovesos@smith.biz"],
-		"date": ["Date: ", "09/27/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "One for my brother, one for me. They're awesome!"]
+		"mydate": ["Date: ", "09/27/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "One for my brother, one for me. They're awesome!"]
 	},
 	"entry 16": {
-		"group": ["Wish List Item: ", "Album: 2205 (2010/2011)"],
+		"entries": ["Wish List Item: ", "Album: 2205 (2010/2011)"],
 		"quantity": ["Number of Items I would like: ", "2"],
 		"firstname": ["First Name: ", "Michael"],
 		"lastname": ["Last Name: ", "McManus"],
@@ -206,12 +206,12 @@ var json = {
 		"password": ["Password: ", "Sc1ssors"],
 		"confirmpw": ["Password Confirmed: ", "Sc1ssors"],
 		"email": ["Email: ", "levante@hair.com"],
-		"date": ["Date: ", "10/15/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "My friend wants this album."]
+		"mydate": ["Date: ", "10/15/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "My friend wants this album."]
 	},
 	"entry 17": {
-		"group": ["Wish List Item: ", "Long Key Necklace"],
+		"entries": ["Wish List Item: ", "Long Key Necklace"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Kari"],
 		"lastname": ["Last Name: ", "Tribble"],
@@ -219,12 +219,12 @@ var json = {
 		"password": ["Password: ", "oneL0ve"],
 		"confirmpw": ["Password Confirmed: ", "oneL0ve"],
 		"email": ["Email: ", "clearnow@awake.com"],
-		"date": ["Date: ", "09/28/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Love the necklace!"]
+		"mydate": ["Date: ", "09/28/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Love the necklace!"]
 	},
 	"entry 18": {
-		"group": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
+		"entries": ["Wish List Item: ", "Autographed Print: SOS In Studio"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Richard"],
 		"lastname": ["Last Name: ", "Simons"],
@@ -232,12 +232,12 @@ var json = {
 		"password": ["Password: ", "sos4Eva"],
 		"confirmpw": ["Password Confirmed: ", "sos4Eva"],
 		"email": ["Email: ", "longliverockn@roll.com"],
-		"date": ["Date: ", "09/25/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Going to hang this up by the stereo."]
+		"mydate": ["Date: ", "09/25/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Going to hang this up by the stereo."]
 	},
 	"entry 19": {
-		"group": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
+		"entries": ["Wish List Item: ", "Album: Sick of Sarah (2008)"],
 		"quantity": ["Number of Items I would like: ", "1"],
 		"firstname": ["First Name: ", "Phaedra"],
 		"lastname": ["Last Name: ", "Williams"],
@@ -245,12 +245,12 @@ var json = {
 		"password": ["Password: ", "V1olingrl"],
 		"confirmpw": ["Password Confirmed: ", "V1olingrl"],
 		"email": ["Email: ", "playstrings@violin.com"],
-		"date": ["Date: ", "10/03/2012"],
-		"gift": ["Gift for a Friend? ", "No"],
-		"comment": ["Comments: ", "Can't get their songs out of my head!"]
+		"mydate": ["Date: ", "10/03/2012"],
+		"slider": ["Gift for a Friend? ", "No"],
+		"comments": ["Comments: ", "Can't get their songs out of my head!"]
 	},
 	"entry 20": {
-		"group": ["Wish List Item: ", "Key Necklace Choker"],
+		"entries": ["Wish List Item: ", "Key Necklace Choker"],
 		"quantity": ["Number of Items I would like: ", "3"],
 		"firstname": ["First Name: ", "Justina"],
 		"lastname": ["Last Name: ", "Flones"],
@@ -258,9 +258,9 @@ var json = {
 		"password": ["Password: ", "Nostress4"],
 		"confirmpw": ["Password Confirmed: ", "Nostress4"],
 		"email": ["Email: ", "stresskills@nomore.com"],
-		"date": ["Date: ", "09/10/2012"],
-		"gift": ["Gift for a Friend? ", "Yes"],
-		"comment": ["Comments: ", "Getting these for my best friends."]
+		"mydate": ["Date: ", "09/10/2012"],
+		"slider": ["Gift for a Friend? ", "Yes"],
+		"comments": ["Comments: ", "Getting these for my best friends."]
 	}
 	
 }

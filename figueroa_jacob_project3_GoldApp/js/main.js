@@ -8,19 +8,13 @@ var parseAddItemForm = function(data){
     
 };
 // jquery dom ready call
-$(document).bind('pageinit', function(){
+$(document).ready(function(){
     
-    var aiform = $('#additemform'),
-        aierrorslink = $('#aierrorslink');
+    var aiform = $('#additemform');
+        aierrorslink = $('#aierrorslink')
+    ;
     
     aiform.validate({
-        rules: {
-            password: "required",
-            confirmpw: {
-                equalTo: "#password"
-            }
-        },
-    
         invalidHandler: function(form, validator){
             aierrorslink.click();
             var html = '';
@@ -30,19 +24,19 @@ $(document).bind('pageinit', function(){
                 // tertiary statement - condition ? true : false
                 var fieldName = legend.length ? legend.text() : label.text();
                 html += '<li>' + fieldName + '</li>';
-            }  
+            };    
             $('#additemerrors ul').html(html);            
         },
-        
         submitHandler: function(){
-            //var data = aiform.serializeArray();
-            //parseAddItemForm(data);
+            var data = aiform.serializeArray();
+            parseAddItemForm(data);
             storeData();
         }
+        
+        
     });
+    
 });
-
-// Functions for validation and more:
 
  //getElementById Function
     function ge(x){
@@ -64,66 +58,22 @@ $(document).bind('pageinit', function(){
         //Gather up all our form field values and store in an object.
         //Object properties are going to contain array with the form label and input value
         //getSelectedRadio();
-        var item                   = {};
-            item.group          = ["Wish List Entry: ", $("#entries").value];
-            item.quantity         = ["Number of Items I would like: ", $("#quantity").value];
-            item.firstname         = ["First Name: ", $("#firstname").value];
-            item.lastname         = ["Last Name: ", $("#lastname").value];
-            item.username         = ["Username: ", $("#username").value];
-            item.password         = ["Password: ", $("#password").value];
-            item.confirmpw         = ["Password Confirmed: ", $("#confirmpw").value];
-            item.email             = ["Email: ", $("#email").value];
-            item.mydate         = ["Date: ", $("#mydate").value];
-            item.slider         = ["Gift for a Friend? ", $("#slider")];
-            item.comments         = ["Comments: ", $("#comments").value];
+        var item                       = {};
+            item.group              = ["Wish List Entry: ", $("#entries").value];
+            item.quantity             = ["Number of Items I would like: ", $("#quantity").value];
+            item.firstname             = ["First Name: ", $("#firstname").value];
+            item.lastname             = ["Last Name: ", $("#lastname").value];
+            item.username             = ["Username: ", $("#username").value];
+            item.password             = ["Password: ", $("#password").value];
+            item.confirmpw             = ["Password Confirmed: ", $("#confirmpw").value];
+            item.email                 = ["Email: ", $("#email").value];
+            item.mydate             = ["Date: ", $("#mydate").value];
+            item.slider             = ["Gift for a Friend? ", $("#slider").value];
+            item.comments             = ["Comments: ", $("#comments").value];
         //Save data into Local Storage: Use Stringify to convert our object to a string. Local storage only stores strings.
         //Save form elements into LS
         localStorage.setItem(id, JSON.stringify(item));
         alert("Item added to Wish List!");
-    }
-    
-        function toggleControls(n){
-        switch(n){
-            case "on": // display data on 
-                $("#additemform").style.display = "hide";
-                //$("clearButton").style.display = "inline";
-                $("#displayButton").style.display = "hide";
-                $("#addNew").style.display = "ui-disabled";
-                break;
-            case "off": // not looking at our data, want to see form
-                $("#additemform").style.display = "show";
-                //$("clearButton").style.display = "inline";
-                $("#displayButton").style.display = "show";
-                $("#addNew").style.display = "ui-disabled";
-                $("#items").style.display = "hide";
-                break;
-            default:
-                return false;
-        }
-    }
-    
-    //Make Item Links
-    //These create edit and delete links for each stored item when displayed.
-    function makeItemLinks(key, linksLi){
-        //add edit single item link
-        var editLink = $('#edit');
-        editLink.key = key;
-        var editText = "Edit Entry";
-        editLink.click();
-        editLink.innerHTML = editText;
-        linksLi.appendChild(editLink);
-        
-        //add line break
-        var breakTag = document.createElement("br");
-        linksLi.appendChild(breakTag);
-        
-        //add delete single item link 
-        var deleteLink = $('#delete');
-        deleteLink.key = key;
-        var deleteText = "Delete Entry";
-        deleteLink.click();
-        deleteLink.innerHTML = deleteText;
-        linksLi.appendChild(deleteLink);  
     }
     
     // getData
@@ -162,6 +112,47 @@ $(document).bind('pageinit', function(){
             makeItemLinks(localStorage.key(i), linksLi);
         }
     }
+    
+    //Auto Populate Local Storage
+    function autoFillData(){
+        //The actual JSON Object data required for this to work is coming from our json.js file, which is loaded from our HTML page.
+        //Store JSON Object into Local Storage.
+        for(var n in json){
+            var id                 = Math.floor(Math.random()*10000001);
+            localStorage.setItem(id, JSON.stringify(json[n]));
+        }
+        
+    }
+    
+    //Make Item Links
+    //These create edit and delete links for each stored item when displayed.
+    function makeItemLinks(key, linksLi){
+        //add edit single item link
+        var editLink 			= document.createElement('n');
+        editLink.href 			= "#";
+        editLink.key 			= key;
+        var editText 			= "Edit Entry";
+        editLink.addEventListener("click", editItem);
+        //editLink.click();
+        editLink.innerHTML 		= editText;
+        linksLi.appendChild(editLink);
+        
+        //add line break
+        var breakTag 			= document.createElement("br");
+        linksLi.appendChild(breakTag);
+        
+        //add delete single item link 
+        //var deleteLink 			= $('#delete');
+        var deleteLink 			= document.createElement('n');
+        deleteLink.href 		= "#";
+        deleteLink.key 			= key;
+        var deleteText 			= "Delete Entry";
+        //deleteLink.click();
+        deleteLink.innerHTML 	= deleteText;
+        linksLi.appendChild(deleteLink);  
+    }
+    
+    
    /* 
      //Get image per item saved. THIS MAY NEED TO BE COMMENTED OUT.
     function getImage(entryName, makeSubList){
@@ -190,17 +181,6 @@ $(document).bind('pageinit', function(){
     }
     */
     
-        //Auto Populate Local Storage
-    function autoFillData(){
-        //The actual JSON Object data required for this to work is coming from our json.js file, which is loaded from our HTML page.
-        //Store JSON Object into Local Storage.
-        for(var n in json){
-            var id                 = Math.floor(Math.random()*10000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
-        }
-        
-    }
-    
     function editItem(){
         //Grab data from our item from Local Storage.
         var value = localStorage.getItem(this.key);
@@ -210,47 +190,69 @@ $(document).bind('pageinit', function(){
         toggleControls("off");
 
         //populate form fields with current localStorage values.
-        $("#entries").value = item.entries[1];
-        $("#quantity").value = item.quantity[1];
-        $("#firstname").value = item.firstname[1];
-        $("#lastname").value = item.lastname[1];
-        $("#username").value = item.username[1];
-        $("#password").value = item.password[1];
-        $("#confirmpw").value = item.confirmpw[1];
-        $("#email").value = item.email[1];
-        $("#mydate").value = item.mydate[1];
-        var sliders = document.forms[0].slider;
-        for(var i=0; i<sliders.length; i++){
-            if(sliders[i].value == "No" && item.slider[1] == "No"){
-                sliders[i].setAttribute("checked", "checked");                
-            }else if(sliders[i].value == "Yes" && item.slider[1] == "Yes"){
-                sliders[i].setAttribute("checked", "checked");
+        $("#entries").val = item.entries[1];
+        $("#quantity").val = item.quantity[1];
+        $("#firstname").val = item.firstname[1];
+        $("#lastname").val = item.lastname[1];
+        $("#username").val = item.username[1];
+        $("#password").val = item.password[1];
+        $("#confirmpw").val = item.confirmpw[1];
+        $("#email").val = item.email[1];
+        $("#mydate").val = item.mydate[1];
+        var slider = document.forms[0].slider;
+        for(var i=0; i<slider.length; i++){
+            if(slider[i].val == "No" && item.slider[1] == "No"){
+                slider[i].setAttribute("checked", "checked");                
+            }else if(slider[i].val == "Yes" && item.slider[1] == "Yes"){
+                slider[i].setAttribute("checked", "checked");
             }
         }
-        $("#comments").value = item.comments[1];
+        $("#comments").val = item.comments[1];
         
         //remove initial listener from the input "save item" button.
-        submitLink.removeEventListener("click", storeData);
+        //submitLink.removeEventListener("click", storeData);
         //change submit button value to edit button
-        $("#edit").value = "Edit Entry";
-        var editSubmit = $("#submitData");
+        //$("#edit").value = "Edit Entry";
+        //var editSubmit = $("#submitData");
         //Save the key value established in this function as a property of the editSubmit event
         //That way we can use that value when we save the data we edited.
-        editSubmit.click();
-        editSubmit.key = this.key;
+        //editSubmit.click();
+        //editSubmit.key = this.key;
      
     }
     
     function deleteItem(){
         var ask = confirm("Are you sure you want to delete this entry?");
-        if(ask === "#yes"){
+        if(ask){
             localStorage.removeItem(this.key);
             alert("Entry was deleted!");
             window.location.reload();
-        }else if(ask ==="#no"){
+        }else if(ask){
             alert("Entry was not deleted.");
         }
     }
+    
+    function toggleControls(n){
+        switch(n){
+            case "on": // display data on 
+                $("#additemform").toggle("hide");
+                //$("clearButton").style.display = "inline";
+                $("#display").toggle("hide");
+                $("#additem").removeClass("ui-disabled");
+                break;
+                
+            case "off": // not looking at our data, want to see form
+                $("#additemform").toggle("show");
+                //$("clearButton").style.display = "inline";
+                $("#display").toggle("show");
+                $("#additem").addClass("ui-disabled");
+                $("#items").toggle("hide");
+                break;
+            default:
+                return false;
+        }
+    }
+    
     
     function clearLocal(){
         if(localStorage.length === 0){
